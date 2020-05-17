@@ -10,7 +10,11 @@ framework:
         cookie_secure: auto
         cookie_samesite: lax
 
-    #esi: true
-    #fragments: true
     php_errors:
         log: true
+
+
+    serializer:
+        enabled: true
+        circular_reference_handler: App\Serializer\CircularReferenceHandler
+        name_converter: 'serializer.name_converter.camel_case_to_snake_case'
